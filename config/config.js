@@ -10,10 +10,11 @@ module.exports = {
   },
   test: {
     username: 'root',
-    password: null,
-    database: 'database_test',
-    host: '127.0.0.1',
-    dialect: 'mysql'
+    password: '2056',
+    database: 'employeebook_test',
+    host: 'localhost',
+    dialect: 'mysql',
+    logging: false,
   },
   production: {
     username: 'root',
