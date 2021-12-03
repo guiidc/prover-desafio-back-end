@@ -12,7 +12,6 @@ const transporter = nodemailer.createTransport({
   auth: {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
-    accessToken: 'AIzaSyCdJQjYHKZktPVtFcusftwJy4VfWsUHg_Y'
   }
 });
 
@@ -25,7 +24,6 @@ async function recover(req, res) {
   if (!user) return res.status(404).json({ message: 'Algo deu errado'});
 
   const token = jwt.sign({ id: user.id }, process.env.JWT_SECRET, { expiresIn: '15m'});
-  console.log(token)
 
   transporter.sendMail({
     from: 'EmployeeBook <guilhermedc93@gmail.com>',
